@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaHome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="images/blacklist_logo_white3.png" alt="Logo" class="logo">
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#help">Pomoc</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <form id="infoForm" action="/submit" method="POST" enctype="multipart/form-data">
+            <h1>Odoslať Vaše Informácie</h1>
+            <label for="fullName">Celé meno:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Zadajte celé meno" required>
+            
+            <label for="phoneNumber">Telefónne číslo:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Zadajte telefónne číslo" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Zadajte svoj email" required>
+            
+            <label for="idPicture">Fotka ID:</label>
+            <input type="file" id="idPicture" name="idPicture" accept="image/*" capture="environment" required onchange="previewImage(event)">
+            
+            <div id="previewContainer" style="display: none;">
+                <img id="preview" src="#" alt="Náhľad Fotky ID">
+                <button type="button" onclick="removeImage()">Odstrániť</button>
+            </div>
+            
+            <label>
+                <input type="checkbox" id="acceptRights" name="acceptRights" required>
+                Súhlasím so spracovaním osobných údajov.
+            </label>
+            
+            <button type="submit">Odoslať</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 DaHome &copy;. Všetky práva vyhradené.</p>
+    </footer>
+    <div class="background-animation">
+        <div class="icon user-icon"></div>
+        <div class="icon house-icon"></div>
+        <div class="icon user-icon"></div>
+        <div class="icon house-icon"></div>
+        <!-- Add more icons as needed -->
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
